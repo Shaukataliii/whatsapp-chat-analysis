@@ -1,0 +1,2 @@
+urlextract==1.9.0
+pip install googletrans==4.0.0-rc1
