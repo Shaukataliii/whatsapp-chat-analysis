@@ -45,7 +45,6 @@ class WordsProcessor:
 
     def translate_urdu_words(self, words: list):
         for index, word in enumerate(words):
-            print(f"processing word: {word}")
             if self.detect_urdu_word(word):
                 translation = self.translate_word(word)
                 words[index] = translation

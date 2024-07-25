@@ -53,7 +53,7 @@ if chat_file is not None:
         activity = insights['daily_activity']
 
         fig, ax = plt.subplots()
-        ax.plot(activity['day'], activity['num_messages'], marker = 'o')
+        ax.plot(activity['day'], activity['num_messages'], marker = 'o', color='red')
         ax.set_xlabel('Day')
         ax.set_ylabel('Number of Messages')
         ax.set_title('Messages per Day')
@@ -67,13 +67,15 @@ if chat_file is not None:
                     st.subheader("Most busy Day")
                     activity = insights['most_busy_days']
                     timeline = "day"
+                    colormap = "cool_r"
                 else:
                     st.subheader("Most busy Month")
                     activity = insights['most_busy_months']
                     timeline = "month"
+                    colormap = "cool"
 
                 fig, ax = plt.subplots()
-                ax.bar(activity[timeline], activity['num_messages'], color = insights_provider.generate_colors(activity, 'coolwarm'))
+                ax.bar(activity[timeline], activity['num_messages'], color = insights_provider.generate_colors(activity, colormap))
                 ax.set_xlabel(timeline.title())
                 ax.set_ylabel("Number of Messages")
                 ax.set_title(f"Most busy {timeline.title()}")
@@ -98,7 +100,7 @@ if chat_file is not None:
         col1, col2 = st.columns(2)
         with col1:
             fig, ax = plt.subplots()
-            ax.barh(activity['username'], activity['num_messages'], color = insights_provider.generate_colors(activity, 'autumn'))
+            ax.barh(activity['username'], activity['num_messages'], color = insights_provider.generate_colors(activity, 'prism'))
             ax.set_xlabel('Number of Messages')
             ax.set_ylabel('Username')
             ax.set_title('Number of messages by each user')
