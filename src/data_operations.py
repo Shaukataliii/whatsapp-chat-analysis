@@ -318,7 +318,6 @@ class InsightsProvider:
     def get_topwords_dict_and_wordcloud_fig(self):
         all_words = []
         for message in self.df['message']:
-            print(message)
             all_words.extend(message_processor.preprocess_messages(message))
 
         translated_words = words_processor.translate_urdu_words(all_words)

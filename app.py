@@ -11,7 +11,7 @@ insights_provider = InsightsProvider()
 
 st.title("Whatsapp chat analyzer :bar_chart:")
 with st.sidebar:
-    chat_file = st.file_uploader("Choose a file")
+    chat_file = st.file_uploader("Choose a file", type="txt", accept_multiple_files=False)
 
 if chat_file is not None:
     string_obj = StringIO(chat_file.getvalue().decode("utf-8"))
