@@ -1,4 +1,4 @@
-import os, re, string, emoji, yaml
+import os, re, string, emoji
 import pandas as pd
 import numpy as np
 from urlextract import URLExtract
@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.colors as mcolors
 
+nltk.download('punkt')
+nltk.download('stopwords')
 cwd = os.getcwd()
 project_dir = os.path.join(cwd)
 chat = ""
