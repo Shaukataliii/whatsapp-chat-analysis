@@ -112,4 +112,5 @@ if chat_file is not None:
         # wordcloud
         st.subheader("Most common words")
         top_words_dict, wordcloud_img = insights_provider.get_topwords_dict_and_wordcloud_fig()
-        st.image(wordcloud_img.to_array())
+        if list(top_words_dict.keys()):
+            st.image(wordcloud_img.to_array())
